@@ -1,6 +1,7 @@
 # kubesim_linkio
 
-KUDEDGE Platform 5G NR Simulator
+KUDEDGE Platform Simulator using linkio to control speed of download by the UE.
+See [linkio](https://github.com/ian-kent/linkio)
 
 ## KUBEDGE Platform
 
