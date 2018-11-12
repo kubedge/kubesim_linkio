@@ -28,6 +28,22 @@ import (
 	"time"
 )
 
+const SIM_NAME = "KUBESIM eLTE"
+const SIM_CONFIG_FILE = "/etc/kubedge/kubesim_conf.yaml"
+const SIM_CONNECTED_UE_FILE = "/etc/kubedge/connected_ue.yaml"
+const SIMPLE_HTTP_SERVER = false
+
+func sim_message(msg string) {
+	log.Printf("%s: %s", SIM_NAME, msg)
+}
+
+func configAPI(w http.ResponseWriter, r *http.Request) {
+	message := r.URL.Path
+	message = strings.TrimPrefix(message, "/")
+	message = SIM_NAME + " : " + message
+	w.Write([]byte(message))
+}
+
 func simulate(targeturl string, targetspeed linkio.Throughput) {
 	// Create a new link at targetspeed
 	link := linkio.NewLink(targetspeed)
@@ -50,15 +66,15 @@ func simulate(targeturl string, targetspeed linkio.Throughput) {
 }
 
 func main() {
-	log.Printf("%s", "kubesim Linkio is running")
+	sim_message("Starting")
 	maintargeturl := os.Args[1]
 	maintargetspeed := os.Args[2]
 	log.Printf("targeturl=%s, targetspeed=%s", maintargeturl, maintargetspeed)
 
 	var conf config.Configdata
-	conf.Config()
-	log.Printf("kubesim linkio config:  product_name=%s, product_type=%s, product_family=%s, product_release=%s, feature_set1=%s, feature_set2=%s",
-		conf.Product_name, conf.Product_type, conf.Product_family, conf.Product_release, conf.Feature_set1, conf.Feature_set2)
+	conf.Config(SIM_NAME, SIM_CONFIG_FILE)
+	log.Printf("%s: product_name=%s, product_type=%s, product_family=%s, product_release=%s, feature_set1=%s, feature_set2=%s",
+		SIM_NAME, conf.Product_name, conf.Product_type, conf.Product_family, conf.Product_release, conf.Feature_set1, conf.Feature_set2)
 
 	targeturl := "google.com:80"
 	targetspeed := 512 * linkio.KilobitPerSecond
@@ -67,5 +83,5 @@ func main() {
 		simulate(targeturl, targetspeed)
 		time.Sleep(15 * time.Second) //every 15 seconds
 	}
-	log.Printf("%s", "kubesim Linkio is exiting")
+	sim_message("Exiting")
 }
