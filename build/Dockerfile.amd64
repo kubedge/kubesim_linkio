@@ -15,4 +15,4 @@
 FROM scratch
 ADD build/etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 ADD build/_output/amd64/goclient /goclient
-CMD ["/goclient", "network", "Bluetooth"]
+CMD ["/goclient"]
