@@ -20,7 +20,7 @@ import (
 	"bufio"
 	"fmt"
 	"github.com/kubedge/kubesim_base/config"
-	"github.com/kubedge/kubesim_linkio/linkio"
+	"github.com/kubedge/kubesim_linkio/pkg/linkio"
 	"io"
 	"log"
 	"net"
