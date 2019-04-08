@@ -13,7 +13,6 @@
 # limitations under the License.
 
 FROM scratch
-ADD kubesim_linkio/ca-certificates.crt /etc/ssl/certs/
-ADD kubesim_linkio/goclient /goclient
-EXPOSE 8080
-CMD ["/goclient", "network", "Bluetooth"]
+ADD build/etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+ADD build/_output/arm32v7/goclient /goclient
+CMD ["/goclient"]

@@ -11,21 +11,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-DOCKER_NAMESPACE ?= kubedge
-VERION           ?= 0.1.0
-SIMU_NAME        = kubesim_linkio
-CURRENT_BRANCH   = ${shell git rev-parse --abbrev-ref HEAD}
-IMAGE_NAME       = ${SIMU_NAME}-${CURRENT_BRANCH}
-DHUBREPO         = ${DOCKER_NAMESPACE}/${IMAGE_NAME}
-
-.PHONY: all
-
-all: simulator
-
-simulator: kubesim_linkio/main.go
-	cd kubesim_linkio && CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -o goclient-${CURRENT_BRANCH} .
-
-clean: kubesim_linkio/goclient-${CURRENT_BRANCH}
-	cd kubesim_linkio && rm -f goclient-${CURRENT_BRANCH}
+FROM scratch
+ADD build/etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+ADD build/_output/arm64v8/goclient /goclient
+CMD ["/goclient"]

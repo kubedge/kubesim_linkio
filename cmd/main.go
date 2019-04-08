@@ -20,7 +20,7 @@ import (
 	"bufio"
 	"fmt"
 	"github.com/kubedge/kubesim_base/config"
-	"github.com/kubedge/kubesim_linkio/linkio"
+	"github.com/kubedge/kubesim_linkio/pkg/linkio"
 	"io"
 	"log"
 	"net"
@@ -85,5 +85,5 @@ func main() {
 		simulate(targeturl, targetspeed)
 		time.Sleep(15 * time.Second) //every 15 seconds
 	}
-	sim_message("Exiting")
+	// sim_message("Exiting")
 }
