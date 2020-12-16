@@ -1,7 +1,7 @@
-github.com/kubedge/kubesim_base v0.1.11 h1:F14OXtJuOtnol6diX2/kgwHW9iwrd0cjvb+wIAueU6w=
-github.com/kubedge/kubesim_base v0.1.11/go.mod h1:V8AaMT+wgDMlNUA0P4n3deXylNqUHyxEl5oQxPK2Jr8=
-github.com/kubedge/kubesim_base/config v0.1.11 h1:opKo+rGuFkxCzhSE4j/4cWD7l9ew7lgqUHX0pBBvwDA=
-github.com/kubedge/kubesim_base/config v0.1.11/go.mod h1:W3Ve49Kx4YGyweceOeBKy6YMhmg+doUCfv+xOITHkjU=
+github.com/kubedge/kubesim_base v0.1.19 h1:YCeHKun6AwObdWs/JmontYXnddq+zfPNfJ9jhSV5+CU=
+github.com/kubedge/kubesim_base v0.1.19/go.mod h1:3Gh6uiehWwxZ8yzkvdnF8Um9w/5p5o1922f7/rAltT8=
+github.com/kubedge/kubesim_base/config v0.1.19 h1:+uQu/ogi/5460oiNuOGmMRDNc4bcpFuHZHmDz/9+J+E=
+github.com/kubedge/kubesim_base/config v0.1.19/go.mod h1:JjGoa9AXPBBK+Fcds1MJvyubi9MUpopaUkPu30DK7FE=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/yaml.v2 v2.2.2 h1:ZCJp+EgiOT7lHqUV2J862kp8Qj64Jo6az82+3Td9dZw=
