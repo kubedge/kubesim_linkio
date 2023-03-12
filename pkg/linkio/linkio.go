@@ -19,13 +19,14 @@ type Throughput int64
 // Common throughputs.
 //
 // To count the number of units in a Duration, divide:
+//
 //	kilobit := linkio.KilobitPerSecond
 //	fmt.Print(int64(kilobit/linkio.BitPerSecond)) // prints 1024
 //
 // To convert an integer number of units to a Throughput, multiply:
+//
 //	megabits := 10
 //	fmt.Print(linkio.Throughput(megabits)*time.BitPerSecond) // prints 10s
-//
 const (
 	BitPerSecond      Throughput = 1
 	BytePerSecond                = 8 * BitPerSecond
